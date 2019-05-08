@@ -1,9 +1,10 @@
-import org.json.*;
+package com.makersacademy.acebook.model;
 
-import java.lang.reflect.Array;
+import org.json.JSONArray;
+import org.json.JSONObject;
+
 import java.util.ArrayList;
 import java.util.Collections;                           //imports collections (array methods)
-
 
 public class Timer {
 
@@ -11,8 +12,8 @@ public class Timer {
         ArrayList<Integer> array;                       //declaring a variable (an array) called array
         ArrayList<Integer> range = newRange();          //declaring a variable (an array) called range
 
-        JSONObject obj = new JSONObject();              //create a new json object
-        JSONArray arr = new JSONArray();
+        JSONObject obj = new JSONObject();              //create a new json object called obj
+        JSONArray arr = new JSONArray();                //create a new json array called arr
 
         obj.put("x", range);                         //puts the range into the json object and calls it x
 
@@ -25,7 +26,7 @@ public class Timer {
             arr.put(duration);                          //adding each duration to the json array
             System.out.println(duration);
         }
-        obj.put("y", arr);                              //putting the json array into the json object.  1 object with 2 arrays
+        obj.put("y", arr);                           //putting the json array into the json object.  1 object with 2 arrays
         return obj.toString();
     }
 
