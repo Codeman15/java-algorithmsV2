@@ -13,6 +13,8 @@ class App extends React.Component { //takes App from here
             <PlotBuilder type={"sort"} /> //returns plotbuilder file with sort
         <h2>Shuffle</h2>
             <PlotBuilder type={"shuffle"} /> //returns plotbuilder file with shuffle
+        <h2>Last</h2>
+            <PlotBuilder type={"last"} /> //returns plotbuilder file with last
         </div>
 
         );
