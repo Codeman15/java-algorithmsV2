@@ -1,28 +1,20 @@
-const ReacdtDOM = require('react-dom');
+const ReactDOM = require('react-dom');
 import React from 'react';
-import Plot from 'react-plotly.js';
+import PlotBuilder from './plot/plotBuilder';
+const client = require('./client');
 
-class App extends React.Component {                         //takes App from here
-  render() {
-    return (
-      <Plot
-        data={[
-          {
-            x: [1, 2, 3],
-            y: [2, 6, 3],
-            type: 'scatter',
-            mode: 'lines+markers',
-            marker: {color: 'red'},
-          },
-          {type: 'bar', x: [1, 2, 3], y: [2, 5, 3]},
-        ]}
-        layout={{width: 320, height: 240, title: 'A Fancy Plot'}}
-      />
-    );
-  }
+class App extends React.Component {                     //takes App from here
+
+
+    render() {
+        return (
+            <PlotBuilder />                             //returns plotbuilder file
+
+        );
+    }
 }
 
 ReactDOM.render(
-    <App />,                                                //takes App from above and passes it to the html file
-    document.getElementById('root')
+  <App />,                                              //takes App from above and passes it to the html file
+  document.getElementById('root')
 );

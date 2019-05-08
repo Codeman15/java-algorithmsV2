@@ -14,3 +14,5 @@ public class ApiController {
     }       //calling to the collectionTimer method in timer file
 
 }
+
+//have 2 seperate contollers because this one is returning JSON and the other is returning html
