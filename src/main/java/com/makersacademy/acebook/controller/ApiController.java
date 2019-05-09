@@ -6,6 +6,7 @@ import org.springframework.web.bind.annotation.RestController;
 //importing methods from the model
 import static com.makersacademy.acebook.model.DuplicateCheck.findDuplicates;
 import static com.makersacademy.acebook.model.LastBuiltIn.lastBuiltInTimer;
+import static com.makersacademy.acebook.model.Reverse.reverseArray;
 import static com.makersacademy.acebook.model.Shuffle.shuffleArray;
 import static com.makersacademy.acebook.model.SortBuiltIn.sortBuiltInTimer;
 import static com.makersacademy.acebook.model.ShuffleBuiltIn.shuffleBuiltInTimer;
@@ -32,6 +33,10 @@ public class ApiController {
 
     @RequestMapping(value = "/api/myShuffle") //going to the api endpoint
     public String myShuffle() { return shuffleArray(); //returning the shuffleArray method in timer file
+    }
+
+    @RequestMapping(value = "/api/reverse") //going to the api endpoint
+    public String reverse() { return reverseArray(); //returning the shuffleArray method in timer file
     }
 
 }

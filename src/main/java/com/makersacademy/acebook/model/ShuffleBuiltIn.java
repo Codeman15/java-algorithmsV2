@@ -32,5 +32,4 @@ public class ShuffleBuiltIn {
         obj.put("y", arr);                              //putting the json array into the json object.  1 object with 2 arrays
         return obj.toString();
     }
-
 }
