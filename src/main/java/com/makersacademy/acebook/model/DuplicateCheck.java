@@ -1,29 +1,50 @@
 package com.makersacademy.acebook.model;
 
+import org.json.JSONArray;
+import org.json.JSONObject;
+
 import java.util.ArrayList; //allows you to use arraylist methods
+
+import static com.makersacademy.acebook.model.Arrays.newArray;
+import static com.makersacademy.acebook.model.Arrays.newRange;
 
 public class DuplicateCheck {
 
-    public static void duplicateChecker() {
+    public static String findDuplicates() {
+        ArrayList<Integer> array;                       //declaring a variable (an array) called array
+        ArrayList<Integer> range = newRange();          //declaring a variable (an array) called range
 
-        String[] arrayToCheck = {"cat", "cat", "dog", "dog", "mouse"};
-        ArrayList<String> emptyArray = new ArrayList<>(); //creates an empty array called emptyArray
+        JSONObject obj = new JSONObject();              //create a new json object called obj
+        JSONArray arr = new JSONArray();                //create a new json array called arr
 
-        for(int index = 0; index < arrayToCheck.length; index++) {
-            if (!emptyArray.contains(arrayToCheck[index])) {
-                for (int index2 = 0; index2 < arrayToCheck.length; index2++) {
+        obj.put("x", range);                            //puts the range into the json object and calls it x
+
+        for (int arraySize: range) {                    //for each element in the range array, create a new array. arraySize is the name of each element in the 'map'
+            array = newArray(arraySize);                //creates the new array using the newArray method taking in arraySize (each element in the 'map')
+            long startTime = System.nanoTime();
+            ArrayList<Integer> result = duplicateChecker(array);     //calling the duplicate checker method and saving to the variable result (variable not actually used)
+            long endTime = System.nanoTime();
+            long duration = (endTime - startTime);
+            arr.put(duration);                          //adding each duration to the json array
+        }
+        obj.put("y", arr);                              //putting the json array into the json object.  1 object with 2 arrays
+        return obj.toString();
+    }
+
+
+    public static ArrayList<Integer> duplicateChecker(ArrayList<Integer> arrayToCheck ) {
+        ArrayList<Integer> emptyArray = new ArrayList<>(); //creates an empty array
+        for(int index = 0; index < arrayToCheck.size(); index++) {
+            if (!emptyArray.contains(arrayToCheck.get(index))) {
+                for (int index2 = 0; index2 < arrayToCheck.size(); index2++) {
                     if (index != index2) {
-                        if (arrayToCheck[index2] == arrayToCheck[index]) {
-                            emptyArray.add(arrayToCheck[index]);
+                        if (arrayToCheck.get(index2) == arrayToCheck.get(index)) {
+                            emptyArray.add(arrayToCheck.get(index));
                         }
                     }
                 }
             }
         }
-
-        System.out.println(emptyArray);
-    }
-    public static void main(String[] args) {
-        duplicateChecker();
+        return emptyArray;
     }
 }
