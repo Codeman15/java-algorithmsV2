@@ -18,7 +18,6 @@ public class ApiController {
     public String sort() { return sortBuiltInTimer(); //returning the sortBuiltInTimer method in timer file
     }
 
-
     @RequestMapping(value = "/api/shuffle") //going to the api endpoint
     public String shuffle() { return shuffleBuiltInTimer(); //returning the shuffleBuiltInTimer method in timer file
     }
@@ -36,7 +35,7 @@ public class ApiController {
     }
 
     @RequestMapping(value = "/api/reverse") //going to the api endpoint
-    public String reverse() { return reverseArray(); //returning the shuffleArray method in timer file
+    public String reverse() { return reverseArray(); //returning the reverseArray method in timer file
     }
 
 }

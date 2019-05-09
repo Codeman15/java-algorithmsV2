@@ -24,11 +24,11 @@ let ytmp = this.props.info.y;
                   z: [1, 5, 2],
                   type: 'scatter',
                   mode: 'lines+points',
-                  marker: {color: 'red'},
+                  marker: {color: 'blue'},
                 },
 
               ]}
-              layout={ {width: 800, height: 600, title: 'A Fancy Plot'} }
+              layout={ {width: 800, height: 600, title: 'Chart'} }
             />
 		)
 	}
