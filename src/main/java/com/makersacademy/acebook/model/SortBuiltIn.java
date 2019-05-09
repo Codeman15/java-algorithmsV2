@@ -27,7 +27,6 @@ public class SortBuiltIn {
             long endTime = System.nanoTime();
             long duration = (endTime - startTime);
             arr.put(duration);                          //adding each duration to the json array
-            //System.out.println(duration);
         }
         obj.put("y", arr);                              //putting the json array into the json object.  1 object with 2 arrays
         return obj.toString();
