@@ -22,7 +22,7 @@ public class DuplicateCheck {
         for (int arraySize: range) {                    //for each element in the range array, create a new array. arraySize is the name of each element in the 'map'
             array = newArray(arraySize);                //creates the new array using the newArray method taking in arraySize (each element in the 'map')
             long startTime = System.nanoTime();
-            ArrayList<Integer> result = duplicateChecker(array);     //calling the duplicate checker method and saving to the variable result (variable not actually used)
+            ArrayList<Integer> result = duplicateCheckMethod (array);     //calling the duplicate checker method and saving to the variable result (variable not actually used)
             long endTime = System.nanoTime();
             long duration = (endTime - startTime);
             arr.put(duration);                          //adding each duration to the json array
@@ -32,7 +32,7 @@ public class DuplicateCheck {
     }
 
 
-    public static ArrayList<Integer> duplicateChecker(ArrayList<Integer> arrayToCheck ) {
+    public static ArrayList<Integer> duplicateCheckMethod(ArrayList<Integer> arrayToCheck ) {
         ArrayList<Integer> emptyArray = new ArrayList<>(); //creates an empty array
         for(int index = 0; index < arrayToCheck.size(); index++) {
             if (!emptyArray.contains(arrayToCheck.get(index))) {

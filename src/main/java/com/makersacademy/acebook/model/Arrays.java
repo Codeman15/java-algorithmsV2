@@ -9,7 +9,7 @@ public class Arrays {
         ArrayList<Integer> array = new ArrayList<>();
         Random rand = new Random();
         for (int count = 0; count < range; count++) {
-            array.add(rand.nextInt(1000)); //adds the count to the array
+            array.add(rand.nextInt(1000)); //adds the rand to the array
         }
         return array;
     }

@@ -17,6 +17,8 @@ class App extends React.Component { //takes App from here
             <PlotBuilder type={"last"} /> //returns plotbuilder file with last
         <h2>Duplicate</h2>
             <PlotBuilder type={"duplicate"} /> //returns plotbuilder file with last
+        <h2>My Shuffle</h2>
+            <PlotBuilder type={"myShuffle"} /> //returns plotbuilder file with last
         </div>
 
         );
