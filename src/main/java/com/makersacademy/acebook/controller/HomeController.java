@@ -11,4 +11,9 @@ public class HomeController {
 		return "index";
 	}
 
+	@RequestMapping(value = "/sort")
+	public String sort() {
+		return "sort";
+	}
+
 }
