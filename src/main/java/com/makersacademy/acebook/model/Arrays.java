@@ -16,7 +16,7 @@ public class Arrays {
 
     public static ArrayList<Integer> newRange(){ //creates an array where each element increases by 5000
         ArrayList<Integer> range = new ArrayList<>();
-        for(int count = 500000; count < 10000001; count+=250000) {
+        for(int count = 500; count < 10001; count+=500) {
             range.add(count); //adds the count to the array
         }
         return range;
